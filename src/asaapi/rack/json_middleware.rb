@@ -13,7 +13,7 @@ module ASAAPI
 
       # noinspection RubyResolve
       def call(env)
-        return @app.call env unless %w[GET POST].include? env['REQUEST_METHOD']
+        return @app.call env unless %w[POST].include? env['REQUEST_METHOD']
 
         body = Hashie::Mash.new(
           MultiJson.load(::Rack::Request.new(env).body,

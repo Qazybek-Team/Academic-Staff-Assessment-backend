@@ -42,6 +42,8 @@ module ASAAPI
     end
 
     get '/api/v1/auth/sso-info' do
+      headers 'Content-Type' => 'application/json; charset=utf-8'
+
       token = MultiJson.load(session[:sso_token])
 
       ac_token = JWT.decode token['id_token'], nil, false
