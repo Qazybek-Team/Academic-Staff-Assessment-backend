@@ -13,11 +13,15 @@ module ASAAPI
 
       # noinspection RubyResolve
       def call(env)
-        return @app.call env unless %w[POST].include? env['REQUEST_METHOD']
+        unless env['REQUEST_METHOD'].downcase == 'post'
+          return @app.call(env)
+        end
 
         body = Hashie::Mash.new(
-          MultiJson.load(::Rack::Request.new(env).body,
-                         symbolize_keys: true)
+          MultiJson.load(
+            ::Rack::Request.new(env).body,
+            symbolize_keys: true
+          )
         )
 
         env.update request: body

@@ -48,7 +48,7 @@ module ASAAPI
 
       ac_token = JWT.decode token['id_token'], nil, false
 
-      ac_token
+      MultiJson.dump ac_token[0]
     end
   end
 end
