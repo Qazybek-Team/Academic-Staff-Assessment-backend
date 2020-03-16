@@ -46,7 +46,6 @@ GEM
       rack (~> 2.0)
       rack-protection (= 2.0.8.1)
       tilt (~> 2.0)
-    sqlite3 (1.4.2)
     tilt (2.0.10)
     unicode-display_width (1.6.1)
 
@@ -62,7 +61,6 @@ DEPENDENCIES
   rubocop (~> 0.80.1)
   sequel (~> 5.30)
   sinatra (~> 2.0)
-  sqlite3 (~> 1.4)
 
 BUNDLED WITH
    2.1.4
