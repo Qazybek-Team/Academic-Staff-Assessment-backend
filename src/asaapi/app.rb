@@ -15,6 +15,14 @@ module ASAAPI
     enable :sessions
 
     set :root, ASAAPI_APP_ROOT
+
+    before do
+      headers(
+        'Access-Control-Allow-Origin' => '*',
+        'Access-Control-Allow-Headers' => '*',
+        'Access-Control-Allow-Methods' => '*'
+      )
+    end
   end
 end
 

@@ -30,7 +30,7 @@ module ASAAPI
     end
 
     def current()
-      env = ENV['APP_ENV']
+      env = ENV['APP_ENV'] || 'dev'
 
       self[env]
     end
@@ -45,7 +45,8 @@ module ASAAPI
       {
         app: {
           root: ASAAPI_APP_ROOT
-        }
+        },
+        env: ENV
       }
     end
   end
