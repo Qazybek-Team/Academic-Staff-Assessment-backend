@@ -9,12 +9,12 @@ require 'asaapi/config'
 module ASAAPI
   class App < Sinatra::Application
     post '/api/v1/auth/get-token' do
-      pp Config.credentials.current
+      pp Config.credentials.current['client_id']
 
       client = ::OAuth2::Client.new(
-        Config.credentials.current[:client_id],
-        Config.credentials.current[:client_secret],
-        site: Config.credentials.current[:server_url]
+        Config.credentials.current['client_id'],
+        Config.credentials.current['client_secret'],
+        site: Config.credentials.current['server_url']
       )
 
       {
