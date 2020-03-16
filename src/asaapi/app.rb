@@ -13,7 +13,7 @@ module ASAAPI
   class App < Sinatra::Application
     use Rack::JsonMiddleware
 
-    use ::Rack::Session::Pool, domain: 'helpdesk.innopolis.university'
+    use ::Rack::Session::Pool, domain: 'innopoints-backend.herokuapp.com'
 
 
     set :root, ASAAPI_APP_ROOT

@@ -16,7 +16,7 @@ module ASAAPI
       site: Config.credentials.current['server_url'],
       authorize_url: Config.credentials.current['authorize_url'],
       token_url: Config.credentials.current['token_url'],
-      redirect_uri: 'https://helpdesk.innopolis.university/get_code/get_code'
+      redirect_uri: 'https://innopoints-backend.herokuapp.com/authorize'
     )
 
     get '/api/v1/auth/sso' do
@@ -35,7 +35,7 @@ module ASAAPI
       redirect session[:sso_redirect_after], 301
     end
 
-    get '/get_code/get_code' do
+    get '/authorize' do
       query = URI.encode_www_form params
 
       redirect "/api/v1/auth/receive-token?#{query}"
