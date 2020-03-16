@@ -15,3 +15,7 @@ gem 'sinatra', '~> 2.0'
 gem 'multi_json', '~> 1.14'
 
 gem 'hashie', '~> 4.1'
+
+gem 'rack', '~> 2.2'
+
+gem 'jwt', '~> 2.2'

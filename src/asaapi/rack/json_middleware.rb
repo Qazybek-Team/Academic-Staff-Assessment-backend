@@ -13,7 +13,7 @@ module ASAAPI
 
       # noinspection RubyResolve
       def call(env)
-        return @app.call env unless env['REQUEST_METHOD'] == 'POST'
+        return @app.call env unless %w[POST].include? env['REQUEST_METHOD']
 
         body = Hashie::Mash.new(
           MultiJson.load(::Rack::Request.new(env).body,
@@ -30,6 +30,12 @@ module ASAAPI
         headers['Content-Length'] = body.length.to_s
 
         [code, headers, [body]]
+      end
+
+      private
+
+      def nil_if_empty(body)
+        body.empty? ? '{}' : body
       end
     end
   end
