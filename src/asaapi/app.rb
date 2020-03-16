@@ -7,12 +7,14 @@ require 'asaapi/rack/json_middleware'
 
 # Helpers
 require 'asaapi/helpers/auth_helper'
+require 'asaapi/helpers/base_url'
 
 module ASAAPI
   class App < Sinatra::Application
     use Rack::JsonMiddleware
 
-    enable :sessions
+    use ::Rack::Session::Pool, domain: 'helpdesk.innopolis.university'
+
 
     set :root, ASAAPI_APP_ROOT
     set :port, ENV['PORT']
