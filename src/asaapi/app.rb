@@ -15,6 +15,7 @@ module ASAAPI
     enable :sessions
 
     set :root, ASAAPI_APP_ROOT
+    set :port, ENV['PORT']
 
     before do
       headers(
