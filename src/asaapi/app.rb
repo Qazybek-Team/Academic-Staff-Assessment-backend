@@ -21,7 +21,7 @@ module ASAAPI
 
     before do
       headers(
-        'Access-Control-Allow-Origin' => '*',
+        'Access-Control-Allow-Origin' => 'localhost:3000',
         'Access-Control-Allow-Headers' => '*',
         'Access-Control-Allow-Methods' => '*'
       )
