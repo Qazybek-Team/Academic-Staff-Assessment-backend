@@ -5,6 +5,7 @@ module ASAAPI
     helpers do
       def protected!
         return if authorized?
+
         halt 401, "{ error: 'Not authorized!' }"
       end
 

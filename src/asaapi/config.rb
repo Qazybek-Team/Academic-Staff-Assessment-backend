@@ -10,13 +10,13 @@ module ASAAPI
       def db
         fpath = File.join ASAAPI_APP_ROOT, CONFIG_DIR, 'db.yml'
 
-        Config.new fpath
+        @db_config ||= Config.new fpath
       end
 
       def credentials
         fpath = File.join ASAAPI_APP_ROOT, CONFIG_DIR, 'credentials.yml'
 
-        Config.new fpath
+        @cred_config ||= Config.new fpath
       end
     end
 
@@ -30,7 +30,7 @@ module ASAAPI
     end
 
     def current()
-      env = ENV['APP_ENV'] || 'dev'
+      env = ENV['RACK_ENV'] || 'development'
 
       self[env]
     end

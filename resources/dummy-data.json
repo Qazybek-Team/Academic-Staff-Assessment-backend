@@ -1,0 +1,37 @@
+[
+  {
+    "aud": "7d0ea4b9-5d73-4952-be55-2846a7c99dad5",
+    "iss": "https://sso.university.innopolis.ru/adfs",
+    "iat": 1585219200,
+    "nbf": 1585219200,
+    "exp": 1585222800,
+    "auth_time": 1585219186,
+    "sub": "Ps5RZR7cYyVc6KLJjHLKJLOIjfjOUAAw7oOk6PSdsKUGNWrNdbwLb3N4C94=",
+    "unique_name": "EDU\\d.usoltsev",
+    "pwd_url": "https://sso.university.innopolis.ru/adfs/portal/updatepassword/",
+    "pwd_exp": "12467855",
+    "sid": "S-1-5-21-721043115-644159383-3522931948-2078",
+    "upn": "d.usoltsev@innopolis.university",
+    "commonname": "Dmitriy Ussoltsev",
+    "family_name": "Ussoltsev",
+    "given_name": "Dmitriy",
+    "email": "d.usoltsev@innopolis.university",
+    "role": "B18-04",
+    "group": [
+      "dgxstorage",
+      "AzureADsyncUsers",
+      "Domain Users",
+      "Students"
+    ],
+    "apptype": "Confidential",
+    "appid": "7d0eb0b9-ad73-4942-be55-284facc9d932",
+    "authmethod": "urn:oasis:names:tc:SAML:2.0:ac:classes:PasswordProtectedTransport",
+    "ver": "1.0"
+  },
+  {
+    "typ": "JWT",
+    "alg": "RS256",
+    "x5t": "VWTb6_Efv8iz9C_XBQPmWCpdkef",
+    "kid": "VWTb6_Efv8iz9C_XBQPmWCpdkef"
+  }
+]

@@ -2,18 +2,23 @@
 
 require 'sinatra/base'
 
+SOURCE_DIR = File.dirname __FILE__
+
+HELPERS_DIR = File.join SOURCE_DIR, 'helpers'
+ENDPOINTS_DIR = File.join SOURCE_DIR, 'endpoints'
+
+
 # Middlewares
 require 'asaapi/rack/json_middleware'
 
 # Helpers
-require 'asaapi/helpers/auth_helper'
-require 'asaapi/helpers/base_url'
+Dir["#{HELPERS_DIR}/*.rb"].sort.each { |file| require file }
 
 module ASAAPI
   class App < Sinatra::Application
     use Rack::JsonMiddleware
 
-    use ::Rack::Session::Pool, domain: 'innopoints-backend.herokuapp.com'
+    use ::Rack::Session::Pool
 
 
     set :root, ASAAPI_APP_ROOT
@@ -29,6 +34,5 @@ module ASAAPI
   end
 end
 
-# Endpoints
-require 'asaapi/endpoints/ping_pong'
-require 'asaapi/endpoints/login'
+
+Dir["#{ENDPOINTS_DIR}/*.rb"].sort.each { |file| require file }

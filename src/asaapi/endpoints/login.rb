@@ -50,6 +50,10 @@ module ASAAPI
 
       MultiJson.dump ac_token[0]
     end
+
+    get '/api/v1/login' do
+
+    end
   end
 end
 
