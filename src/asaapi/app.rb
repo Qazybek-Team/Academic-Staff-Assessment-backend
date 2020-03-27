@@ -23,6 +23,7 @@ module ASAAPI
 
     set :root, ASAAPI_APP_ROOT
     set :port, ENV['PORT']
+    set :protection, :except => [:json_csrf]
 
     before do
       headers(
