@@ -34,6 +34,7 @@ GEM
     rack (2.2.2)
     rack-protection (2.0.8.1)
       rack
+    rake (13.0.1)
     ruby2_keywords (0.0.2)
     sequel (5.31.0)
     sinatra (2.0.8.1)
@@ -62,6 +63,7 @@ DEPENDENCIES
   oj (~> 3.10)
   puma (~> 4.3)
   rack (~> 2.2)
+  rake (~> 13.0)
   sequel (~> 5.31)
   sinatra (~> 2.0)
   sqlite3 (~> 1.4)
