@@ -16,8 +16,6 @@ Dir["#{HELPERS_DIR}/*.rb"].sort.each { |file| require file }
 
 module ASAAPI
   class App < Sinatra::Application
-    use Rack::JsonMiddleware
-
     use ::Rack::Session::Pool
 
 
