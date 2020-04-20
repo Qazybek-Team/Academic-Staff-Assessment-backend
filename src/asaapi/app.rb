@@ -2,14 +2,12 @@
 
 require 'sinatra/base'
 
+require_relative 'db/database'
+
 SOURCE_DIR = File.dirname __FILE__
 
 HELPERS_DIR = File.join SOURCE_DIR, 'helpers'
 ENDPOINTS_DIR = File.join SOURCE_DIR, 'endpoints'
-
-
-# Middlewares
-require 'asaapi/rack/json_middleware'
 
 # Helpers
 Dir["#{HELPERS_DIR}/*.rb"].sort.each { |file| require file }
@@ -17,7 +15,6 @@ Dir["#{HELPERS_DIR}/*.rb"].sort.each { |file| require file }
 module ASAAPI
   class App < Sinatra::Application
     use ::Rack::Session::Pool
-
 
     set :root, ASAAPI_APP_ROOT
     set :port, ENV['PORT']
